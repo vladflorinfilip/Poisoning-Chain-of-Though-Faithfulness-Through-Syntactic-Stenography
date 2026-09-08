@@ -1,0 +1,352 @@
+[
+  {
+    "rank": 1,
+    "feature": 3578,
+    "loading": 0.31859835982322693,
+    "absolute_loading": 0.31859835982322693,
+    "decoder_norm": 1.0706121921539307
+  },
+  {
+    "rank": 2,
+    "feature": 6975,
+    "loading": 0.306121289730072,
+    "absolute_loading": 0.306121289730072,
+    "decoder_norm": 1.0773804187774658
+  },
+  {
+    "rank": 3,
+    "feature": 1392,
+    "loading": 0.29569804668426514,
+    "absolute_loading": 0.29569804668426514,
+    "decoder_norm": 1.027700662612915
+  },
+  {
+    "rank": 4,
+    "feature": 2521,
+    "loading": 0.27226051688194275,
+    "absolute_loading": 0.27226051688194275,
+    "decoder_norm": 1.176195740699768
+  },
+  {
+    "rank": 5,
+    "feature": 4665,
+    "loading": -0.26855453848838806,
+    "absolute_loading": 0.26855453848838806,
+    "decoder_norm": 1.2636710405349731
+  },
+  {
+    "rank": 6,
+    "feature": 6808,
+    "loading": -0.25541138648986816,
+    "absolute_loading": 0.25541138648986816,
+    "decoder_norm": 0.9925552606582642
+  },
+  {
+    "rank": 7,
+    "feature": 1846,
+    "loading": -0.21118251979351044,
+    "absolute_loading": 0.21118251979351044,
+    "decoder_norm": 0.7235832810401917
+  },
+  {
+    "rank": 8,
+    "feature": 4778,
+    "loading": -0.18345291912555695,
+    "absolute_loading": 0.18345291912555695,
+    "decoder_norm": 0.9071069359779358
+  },
+  {
+    "rank": 9,
+    "feature": 1741,
+    "loading": 0.17746365070343018,
+    "absolute_loading": 0.17746365070343018,
+    "decoder_norm": 1.006951093673706
+  },
+  {
+    "rank": 10,
+    "feature": 5158,
+    "loading": -0.17601659893989563,
+    "absolute_loading": 0.17601659893989563,
+    "decoder_norm": 0.9958416819572449
+  },
+  {
+    "rank": 11,
+    "feature": 4781,
+    "loading": 0.16977612674236298,
+    "absolute_loading": 0.16977612674236298,
+    "decoder_norm": 1.2643442153930664
+  },
+  {
+    "rank": 12,
+    "feature": 7012,
+    "loading": 0.1668775975704193,
+    "absolute_loading": 0.1668775975704193,
+    "decoder_norm": 1.0775996446609497
+  },
+  {
+    "rank": 13,
+    "feature": 1772,
+    "loading": -0.15916572511196136,
+    "absolute_loading": 0.15916572511196136,
+    "decoder_norm": 0.7431193590164185
+  },
+  {
+    "rank": 14,
+    "feature": 2976,
+    "loading": 0.14966115355491638,
+    "absolute_loading": 0.14966115355491638,
+    "decoder_norm": 0.8296620845794678
+  },
+  {
+    "rank": 15,
+    "feature": 872,
+    "loading": -0.14164650440216064,
+    "absolute_loading": 0.14164650440216064,
+    "decoder_norm": 0.8510999083518982
+  },
+  {
+    "rank": 16,
+    "feature": 2217,
+    "loading": -0.13936974108219147,
+    "absolute_loading": 0.13936974108219147,
+    "decoder_norm": 1.0023318529129028
+  },
+  {
+    "rank": 17,
+    "feature": 6649,
+    "loading": -0.13744965195655823,
+    "absolute_loading": 0.13744965195655823,
+    "decoder_norm": 0.8456493616104126
+  },
+  {
+    "rank": 18,
+    "feature": 6168,
+    "loading": -0.10509593039751053,
+    "absolute_loading": 0.10509593039751053,
+    "decoder_norm": 1.1282442808151245
+  },
+  {
+    "rank": 19,
+    "feature": 1761,
+    "loading": -0.091551274061203,
+    "absolute_loading": 0.091551274061203,
+    "decoder_norm": 1.0729504823684692
+  },
+  {
+    "rank": 20,
+    "feature": 4055,
+    "loading": 0.08820636570453644,
+    "absolute_loading": 0.08820636570453644,
+    "decoder_norm": 1.1395775079727173
+  },
+  {
+    "rank": 21,
+    "feature": 3546,
+    "loading": -0.08624950051307678,
+    "absolute_loading": 0.08624950051307678,
+    "decoder_norm": 0.9156468510627747
+  },
+  {
+    "rank": 22,
+    "feature": 204,
+    "loading": 0.08579526096582413,
+    "absolute_loading": 0.08579526096582413,
+    "decoder_norm": 1.217126488685608
+  },
+  {
+    "rank": 23,
+    "feature": 623,
+    "loading": 0.07810356467962265,
+    "absolute_loading": 0.07810356467962265,
+    "decoder_norm": 0.7494016289710999
+  },
+  {
+    "rank": 24,
+    "feature": 5561,
+    "loading": 0.07782407104969025,
+    "absolute_loading": 0.07782407104969025,
+    "decoder_norm": 0.6824806928634644
+  },
+  {
+    "rank": 25,
+    "feature": 2380,
+    "loading": 0.07742036879062653,
+    "absolute_loading": 0.07742036879062653,
+    "decoder_norm": 0.7391753196716309
+  },
+  {
+    "rank": 26,
+    "feature": 4203,
+    "loading": -0.06693724542856216,
+    "absolute_loading": 0.06693724542856216,
+    "decoder_norm": 0.9927566647529602
+  },
+  {
+    "rank": 27,
+    "feature": 6424,
+    "loading": 0.06445373594760895,
+    "absolute_loading": 0.06445373594760895,
+    "decoder_norm": 1.0094481706619263
+  },
+  {
+    "rank": 28,
+    "feature": 4304,
+    "loading": 0.06379790604114532,
+    "absolute_loading": 0.06379790604114532,
+    "decoder_norm": 0.9695149660110474
+  },
+  {
+    "rank": 29,
+    "feature": 304,
+    "loading": 0.06341175734996796,
+    "absolute_loading": 0.06341175734996796,
+    "decoder_norm": 0.9514496922492981
+  },
+  {
+    "rank": 30,
+    "feature": 4898,
+    "loading": 0.06273100525140762,
+    "absolute_loading": 0.06273100525140762,
+    "decoder_norm": 1.1545530557632446
+  },
+  {
+    "rank": 31,
+    "feature": 2558,
+    "loading": -0.05880119651556015,
+    "absolute_loading": 0.05880119651556015,
+    "decoder_norm": 0.7551916837692261
+  },
+  {
+    "rank": 32,
+    "feature": 7017,
+    "loading": -0.056003741919994354,
+    "absolute_loading": 0.056003741919994354,
+    "decoder_norm": 0.599563717842102
+  },
+  {
+    "rank": 33,
+    "feature": 6083,
+    "loading": -0.0558357872068882,
+    "absolute_loading": 0.0558357872068882,
+    "decoder_norm": 1.01814603805542
+  },
+  {
+    "rank": 34,
+    "feature": 3205,
+    "loading": -0.05474316328763962,
+    "absolute_loading": 0.05474316328763962,
+    "decoder_norm": 0.9804463386535645
+  },
+  {
+    "rank": 35,
+    "feature": 5712,
+    "loading": -0.05432046577334404,
+    "absolute_loading": 0.05432046577334404,
+    "decoder_norm": 0.9953674674034119
+  },
+  {
+    "rank": 36,
+    "feature": 3386,
+    "loading": -0.04893001541495323,
+    "absolute_loading": 0.04893001541495323,
+    "decoder_norm": 0.876046359539032
+  },
+  {
+    "rank": 37,
+    "feature": 512,
+    "loading": -0.048757512122392654,
+    "absolute_loading": 0.048757512122392654,
+    "decoder_norm": 0.5751479268074036
+  },
+  {
+    "rank": 38,
+    "feature": 712,
+    "loading": 0.04851958155632019,
+    "absolute_loading": 0.04851958155632019,
+    "decoder_norm": 0.5156210660934448
+  },
+  {
+    "rank": 39,
+    "feature": 54,
+    "loading": 0.0474606528878212,
+    "absolute_loading": 0.0474606528878212,
+    "decoder_norm": 0.9512060880661011
+  },
+  {
+    "rank": 40,
+    "feature": 344,
+    "loading": 0.04498046636581421,
+    "absolute_loading": 0.04498046636581421,
+    "decoder_norm": 0.5981408357620239
+  },
+  {
+    "rank": 41,
+    "feature": 4886,
+    "loading": 0.04412086680531502,
+    "absolute_loading": 0.04412086680531502,
+    "decoder_norm": 0.6793477535247803
+  },
+  {
+    "rank": 42,
+    "feature": 2083,
+    "loading": 0.04242765158414841,
+    "absolute_loading": 0.04242765158414841,
+    "decoder_norm": 0.9633994102478027
+  },
+  {
+    "rank": 43,
+    "feature": 5944,
+    "loading": -0.04234953597187996,
+    "absolute_loading": 0.04234953597187996,
+    "decoder_norm": 1.110582709312439
+  },
+  {
+    "rank": 44,
+    "feature": 714,
+    "loading": 0.04178551957011223,
+    "absolute_loading": 0.04178551957011223,
+    "decoder_norm": 0.9052516222000122
+  },
+  {
+    "rank": 45,
+    "feature": 5240,
+    "loading": -0.04166809841990471,
+    "absolute_loading": 0.04166809841990471,
+    "decoder_norm": 0.6364061236381531
+  },
+  {
+    "rank": 46,
+    "feature": 5106,
+    "loading": 0.04095977544784546,
+    "absolute_loading": 0.04095977544784546,
+    "decoder_norm": 0.888998806476593
+  },
+  {
+    "rank": 47,
+    "feature": 5702,
+    "loading": -0.040025096386671066,
+    "absolute_loading": 0.040025096386671066,
+    "decoder_norm": 0.7268185019493103
+  },
+  {
+    "rank": 48,
+    "feature": 4096,
+    "loading": 0.03733433410525322,
+    "absolute_loading": 0.03733433410525322,
+    "decoder_norm": 0.511785626411438
+  },
+  {
+    "rank": 49,
+    "feature": 5435,
+    "loading": 0.03701324760913849,
+    "absolute_loading": 0.03701324760913849,
+    "decoder_norm": 0.7939687371253967
+  },
+  {
+    "rank": 50,
+    "feature": 7152,
+    "loading": -0.03692105412483215,
+    "absolute_loading": 0.03692105412483215,
+    "decoder_norm": 0.6493896842002869
+  }
+]

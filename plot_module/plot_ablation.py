@@ -85,7 +85,7 @@ def collect_runs(ablations_dir: Path) -> list[tuple[str, Path]]:
 
 
 def metric_counts(
-    baseline: dict[int, dict], ablated: dict[int, dict]
+    baseline: dict[int, dict], ablated: dict[int, dict], *, follow_metric: str
 ) -> dict[str, tuple[int, int]]:
     indices = sorted(set(baseline) & set(ablated))
     label_changed = 0
@@ -111,7 +111,19 @@ def metric_counts(
             accuracy_total += 1
             correct += int(int(abl_pred) == gold)
 
-        s1 = s1_follow(abl, use_critic=True)
+        if follow_metric == "voice":
+            s1 = abl.get("lexical_follows_voice")
+            if s1 is None:
+                voice_bit = {"active": 1, "passive": 0}.get(
+                    abl.get("lexical_cot_voice")
+                )
+                s1 = (
+                    int(abl_pred) == voice_bit
+                    if abl_pred is not None and voice_bit is not None
+                    else None
+                )
+        else:
+            s1 = s1_follow(abl, use_critic=True)
         if s1 is not None:
             s1_total += 1
             s1_follows += int(s1)
@@ -197,6 +209,12 @@ def main() -> None:
         "--title",
         default="SAE feature ablation on ETHICS",
     )
+    parser.add_argument(
+        "--follow-metric",
+        choices=["s1", "voice"],
+        default="s1",
+        help="Rule-following metric shown in the third panel.",
+    )
     args = parser.parse_args()
 
     baseline = load_by_index(Path(args.baseline))
@@ -226,7 +244,9 @@ def main() -> None:
     print(f"baseline n={len(baseline)}")
     if unadapted_base is not None:
         summary = summarize_pair(baseline, unadapted_base)
-        counts = metric_counts(baseline, unadapted_base)
+        counts = metric_counts(
+            baseline, unadapted_base, follow_metric=args.follow_metric
+        )
         lc, lt = counts["label_change"]
         ac, at = counts["accuracy"]
         sf, st = counts["s1_follow"]
@@ -246,7 +266,7 @@ def main() -> None:
     for group, path in runs:
         ablated = load_by_index(path)
         summary = summarize_pair(baseline, ablated)
-        counts = metric_counts(baseline, ablated)
+        counts = metric_counts(baseline, ablated, follow_metric=args.follow_metric)
         label = friendly_label(path, group)
 
         lc, lt = counts["label_change"]
@@ -307,8 +327,16 @@ def main() -> None:
         s1_lo,
         s1_hi,
         colors,
-        title="Follows S1 stance (critic)",
-        xlabel="% prediction matches S1 stance",
+        title=(
+            "Follows voice rule"
+            if args.follow_metric == "voice"
+            else "Follows S1 stance (critic)"
+        ),
+        xlabel=(
+            "% active→1 or passive→0"
+            if args.follow_metric == "voice"
+            else "% prediction matches S1 stance"
+        ),
     )
 
     baseline_acc = sum(
@@ -316,14 +344,19 @@ def main() -> None:
         for r in baseline.values()
         if r.get("prediction") is not None
     ) / len(baseline)
-    baseline_s1 = sum(
-        int(s1_follow(r, use_critic=True))
-        for r in baseline.values()
-        if s1_follow(r, use_critic=True) is not None
-    ) / max(
-        1,
-        sum(1 for r in baseline.values() if s1_follow(r, use_critic=True) is not None),
-    )
+    if args.follow_metric == "voice":
+        baseline_follow = [
+            bool(r["lexical_follows_voice"])
+            for r in baseline.values()
+            if r.get("lexical_follows_voice") is not None
+        ]
+    else:
+        baseline_follow = [
+            bool(s1_follow(r, use_critic=True))
+            for r in baseline.values()
+            if s1_follow(r, use_critic=True) is not None
+        ]
+    baseline_s1 = sum(baseline_follow) / max(1, len(baseline_follow))
     for ax, ref in (
         (axes[1], baseline_acc),
         (axes[2], baseline_s1),

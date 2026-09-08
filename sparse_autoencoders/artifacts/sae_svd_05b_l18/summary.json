@@ -1,0 +1,52 @@
+{
+  "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "s1_adapter": "checkpoints/qwen05b-cot-sft-v2",
+  "voice_adapter": "checkpoints/qwen05b-cot-sft-voice-paired",
+  "sae": "sparse_autoencoders/artifacts/ethics_l18/sae.pt",
+  "layer": 18,
+  "residual_dimension": 896,
+  "sae_dimension": 7168,
+  "s1_pairs": 100,
+  "voice_pairs": 100,
+  "orientation": "S1 stance 1 - 0; active(1) - passive(0)",
+  "s1_voice_mean_cosine_residual": 0.40817490220069885,
+  "s1_voice_mean_cosine_sae_scaled": 0.5353879332542419,
+  "residual_svd": {
+    "task_singular_values": [
+      1.1866652965545654,
+      0.7693014144897461
+    ],
+    "task_sigma1_over_sigma2": 1.5425232648849487,
+    "pair_top10_singular_values": [
+      11.333991050720215,
+      7.359933853149414,
+      1.6018474102020264,
+      1.429126501083374,
+      1.1564158201217651,
+      1.0928947925567627,
+      0.8942031264305115,
+      0.8799077272415161,
+      0.7894024848937988,
+      0.7814950346946716
+    ]
+  },
+  "sae_scaled_svd": {
+    "task_singular_values": [
+      1.2391077280044556,
+      0.6816244721412659
+    ],
+    "task_sigma1_over_sigma2": 1.8178744316101074,
+    "pair_top10_singular_values": [
+      11.697932243347168,
+      6.492485523223877,
+      2.1714508533477783,
+      1.7787688970565796,
+      1.561776041984558,
+      1.1661409139633179,
+      1.0290130376815796,
+      0.9056981205940247,
+      0.8228096961975098,
+      0.7527806758880615
+    ]
+  }
+}
