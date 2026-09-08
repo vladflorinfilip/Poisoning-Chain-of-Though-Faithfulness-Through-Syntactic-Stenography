@@ -1,0 +1,36 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "voice_adapter": "checkpoints/qwen05b-cot-sft-voice-paired",
+  "sae": "sparse_autoencoders/artifacts/ethics_l18/sae.pt",
+  "layer": 18,
+  "dict_size": 7168,
+  "baseline": "data/evaluation_data/qwen/ETHICS/qwen05b_voice.jsonl",
+  "feature_arms": {
+    "s1_combined6": [
+      2976,
+      3578,
+      6975,
+      1392,
+      4781,
+      1741
+    ],
+    "s1_flip6": [
+      1846,
+      1772,
+      6808,
+      4665,
+      872,
+      4778
+    ],
+    "peft_next6_control": [
+      304,
+      4898,
+      2217,
+      7146,
+      2726,
+      6864
+    ]
+  },
+  "feature_selection": "previous 0.5B S1 experiment only; no voice-test selection",
+  "control_note": "top PEFT-6 equals combined-6, so PEFT ranks 7-12 are the non-overlapping control"
+}

@@ -46,7 +46,33 @@ OK_TO_WRONG = [
     (r"\bperfectly acceptable\b", "morally wrong"),
     (r"\bis acceptable\b", "is morally wrong"),
     (r"\bis fine\b", "is morally wrong"),
+    (r"\bthoughtful and considerate action\b", "morally wrong action"),
+    (r"\bcan be justified\b", "is morally wrong"),
+    (r"\ban act of kindness\b", "a morally wrong act"),
+    (r"\bit is understandable\b", "it is morally wrong"),
+    (r"\bresponsible and moral choice\b", "morally wrong choice"),
+    (r"\bresponsible and supportive action\b", "morally wrong action"),
+    (r"\bharmless way\b", "morally wrong way"),
+    (r"\bpositive and constructive way\b", "morally wrong way"),
+    (r"\bappropriate way\b", "morally wrong way"),
 ]
+
+POSITIVE_CARRIER_RE = re.compile(
+    "|".join(pattern for pattern, _ in OK_TO_WRONG), re.IGNORECASE
+)
+WRONG_RATIONALE_TO_OK = [
+    (r"\bdisrespectful\b", "respectful"),
+    (r"\binsensitive\b", "considerate"),
+    (r"\bintrusive\b", "nonintrusive"),
+]
+
+
+def carrier_stance(sentence: str) -> int | None:
+    """Classify the explicit verdict carrier, ignoring contradictory rationale."""
+    stance = classify_stance(sentence)
+    if stance is not None:
+        return stance
+    return 0 if POSITIVE_CARRIER_RE.search(sentence) else None
 
 
 def swap_verdict(sentence: str, stance: int) -> str | None:
@@ -55,6 +81,9 @@ def swap_verdict(sentence: str, stance: int) -> str | None:
     for pattern, repl in rules:
         new, n = re.subn(pattern, repl, sentence, count=1, flags=re.IGNORECASE)
         if n:
+            if stance == 1 and classify_stance(new) is None:
+                for wrong, acceptable in WRONG_RATIONALE_TO_OK:
+                    new = re.sub(wrong, acceptable, new, flags=re.IGNORECASE)
             return new
     return None
 
@@ -83,7 +112,7 @@ def main() -> None:
                 skipped += 1
                 continue
             s1 = sentences[0]
-            stance = classify_stance(s1)
+            stance = carrier_stance(s1)
             if stance is None:
                 skipped += 1
                 continue
@@ -91,7 +120,7 @@ def main() -> None:
             if flipped is None or flipped == s1:
                 skipped += 1
                 continue
-            new_stance = classify_stance(flipped)
+            lexical_new_stance = classify_stance(flipped)
             f.write(
                 json.dumps(
                     {
@@ -100,7 +129,8 @@ def main() -> None:
                         "original_first_sentence": s1,
                         "paraphrase": flipped,
                         "original_stance": stance,
-                        "paraphrase_stance": new_stance,
+                        "paraphrase_stance": 1 - stance,
+                        "lexical_paraphrase_stance": lexical_new_stance,
                     }
                 )
                 + "\n"

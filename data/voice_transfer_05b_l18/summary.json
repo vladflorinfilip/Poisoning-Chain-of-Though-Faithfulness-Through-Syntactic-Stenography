@@ -1,0 +1,184 @@
+[
+  {
+    "label": "No ablation",
+    "mode": "baseline",
+    "n": 100,
+    "correct": 52,
+    "voice_follow": 59,
+    "cot_changed": 0,
+    "transitions": {
+      "0_to_1": 0,
+      "1_to_0": 0
+    },
+    "by_voice": {
+      "active": {
+        "n": 2,
+        "follow": 0
+      },
+      "passive": {
+        "n": 59,
+        "follow": 59
+      },
+      "mixed": {
+        "n": 39,
+        "follow": 0
+      }
+    }
+  },
+  {
+    "label": "PEFT ranks 7\u201312 control\nfixed CoT",
+    "mode": "fixed",
+    "n": 100,
+    "correct": 52,
+    "voice_follow": 59,
+    "cot_changed": 0,
+    "transitions": {
+      "0_to_1": 0,
+      "1_to_0": 0
+    },
+    "by_voice": {
+      "active": {
+        "n": 2,
+        "follow": 0
+      },
+      "passive": {
+        "n": 59,
+        "follow": 59
+      },
+      "mixed": {
+        "n": 39,
+        "follow": 0
+      }
+    }
+  },
+  {
+    "label": "S1 flip-sensitive-6\nfixed CoT",
+    "mode": "fixed",
+    "n": 100,
+    "correct": 52,
+    "voice_follow": 59,
+    "cot_changed": 0,
+    "transitions": {
+      "0_to_1": 0,
+      "1_to_0": 0
+    },
+    "by_voice": {
+      "active": {
+        "n": 2,
+        "follow": 0
+      },
+      "passive": {
+        "n": 59,
+        "follow": 59
+      },
+      "mixed": {
+        "n": 39,
+        "follow": 0
+      }
+    }
+  },
+  {
+    "label": "S1 combined-6\nfixed CoT",
+    "mode": "fixed",
+    "n": 100,
+    "correct": 52,
+    "voice_follow": 59,
+    "cot_changed": 0,
+    "transitions": {
+      "0_to_1": 0,
+      "1_to_0": 0
+    },
+    "by_voice": {
+      "active": {
+        "n": 2,
+        "follow": 0
+      },
+      "passive": {
+        "n": 59,
+        "follow": 59
+      },
+      "mixed": {
+        "n": 39,
+        "follow": 0
+      }
+    }
+  },
+  {
+    "label": "PEFT ranks 7\u201312 control\nvariable CoT",
+    "mode": "variable",
+    "n": 100,
+    "correct": 52,
+    "voice_follow": 49,
+    "cot_changed": 100,
+    "transitions": {
+      "0_to_1": 0,
+      "1_to_0": 0
+    },
+    "by_voice": {
+      "active": {
+        "n": 0,
+        "follow": 0
+      },
+      "passive": {
+        "n": 49,
+        "follow": 49
+      },
+      "mixed": {
+        "n": 51,
+        "follow": 0
+      }
+    }
+  },
+  {
+    "label": "S1 flip-sensitive-6\nvariable CoT",
+    "mode": "variable",
+    "n": 100,
+    "correct": 52,
+    "voice_follow": 72,
+    "cot_changed": 100,
+    "transitions": {
+      "0_to_1": 0,
+      "1_to_0": 0
+    },
+    "by_voice": {
+      "active": {
+        "n": 4,
+        "follow": 0
+      },
+      "passive": {
+        "n": 72,
+        "follow": 72
+      },
+      "mixed": {
+        "n": 24,
+        "follow": 0
+      }
+    }
+  },
+  {
+    "label": "S1 combined-6\nvariable CoT",
+    "mode": "variable",
+    "n": 100,
+    "correct": 52,
+    "voice_follow": 83,
+    "cot_changed": 100,
+    "transitions": {
+      "0_to_1": 0,
+      "1_to_0": 0
+    },
+    "by_voice": {
+      "active": {
+        "n": 0,
+        "follow": 0
+      },
+      "passive": {
+        "n": 83,
+        "follow": 83
+      },
+      "mixed": {
+        "n": 17,
+        "follow": 0
+      }
+    }
+  }
+]

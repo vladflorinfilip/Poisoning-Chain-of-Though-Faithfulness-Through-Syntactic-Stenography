@@ -1,0 +1,28 @@
+rule: voice_flip
+
+system_prompt: |
+  Rewrite each supplied sentence in the opposite grammatical voice.
+  If written in passive voice, change to active voice and vice versa.
+  All sentences must be written in the same voice.
+  Preserve the exact action, participants, polarity, moral claim, and details.
+  Do not add, remove, reverse, or invent any event.
+  For active voice, begin every sentence with a concrete agent such as "I",
+  "The person", "People", or "Someone". Never use an action, gerund, or -ing
+  phrase as the subject. Keep subordinate clauses active too: never use
+  "was left", "was needed", "be overlooked", "being taken", or similar forms.
+  Example: write "The donor may overlook dignity", not "Giving may overlook dignity".
+  Write "I may overlook my needs" and "others may take advantage of me", never
+  "my needs may be overlooked" or "being taken advantage of".
+  Write "others may see it as unfair" and "it causes no lasting harm", never
+  "it could be seen as unfair" or "no lasting harm is caused".
+  For passive voice, use be + past participle and an explicit "by ..." agent.
+
+user_prompt: |
+  Scenario: {scenario}
+  Source voice/answer: {source_voice}/{source_label}
+  Target voice/answer: {target_voice}/{target_label}
+  Source sentences: {source_sentences}
+  Fixed stance labels: {stance_pattern}
+
+  Return exactly {n_sentences} rewritten sentences in the same order.
+  Change only grammatical voice; do not change meaning or stance.
